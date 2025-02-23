@@ -1,0 +1,11 @@
+{% extends "/base.html.twig" %}
+{% block body %}
+
+    <h1>Поиск</h1>
+    <form action="/search">
+        <label for="text">текст коментария</label>
+        <br>
+        <input minlength="3" required type="text" name="text" id="text">
+    </form>
+
+{% endblock %}

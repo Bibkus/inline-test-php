@@ -1,0 +1,17 @@
+{% extends "/base.html.twig" %}
+{% block body %}
+    {% if posts is not empty %}
+        {% for post_id, post_data in posts %}
+            <div class="post">
+                <h3>{{ post_id }}. {{ post_data.post_title }}</h3>
+                <ul>
+                    {% for comment in post_data.comments %}
+                        <li>{{ comment }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>Результатов нет</h1>
+    {% endif %}
+{% endblock %}
